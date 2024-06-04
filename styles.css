@@ -1,0 +1,317 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #0056b3;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    transition: background-color 0.3s;
+}
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    background-color: #003d7a;
+    transform: translateY(-2px);
+}
+nav ul li a:hover {
+    background-color: #003d7a;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* Change to space-between to make menu items fill the entire width */
+    background-color: #0056b3;
+    width: 100%;
+    padding: 0 1rem; /* Add padding to the sides */
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+form label {
+    display: block;
+    margin: 0.5rem 0 0.25rem;
+    font-weight: bold;
+}
+
+form input, form textarea, form select, form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+#datetime {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+#patient-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#patient-list li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#search {
+    width: calc(100% - 2rem);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#patient-count {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    main {
+        padding: 1rem;
+    }
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+header:hover {
+    background-color: #0056b3;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+
+
+section h2 {
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* This will collapse the borders into a single border */
+    border: 2px solid transparent; /* Add initial border to the entire table with the same color as the background */
+    animation: tableBorderAnimation 1s ease forwards; /* Apply animation to the border */
+}
+
+th, td {
+    border: 2px solid black; /* Add initial border to table cells */
+    padding: 10px; /* Add padding to improve readability */
+    text-align: left; /* Align text to the left within cells */
+    color: #000000; /* Set font color */
+}
+
+th {
+    background-color: #888888; /* Set background color for table header cells */
+    color: #000000; /* Set font color for table header cells */
+}
+
+@keyframes tableBorderAnimation {
+    from {
+        border-color: transparent; /* Start with transparent border */
+    }
+    to {
+        border-color: #000000; /* Transition to desired border color */
+    }
+}
+
+.notice-board {
+    background-color: #fffefd; /* Set background color */
+    color: #000000; /* Set text color */
+    padding: 10px; /* Add padding for spacing */
+    text-align: right; /* Align text to center */
+    animation: noticeBoardAnimation 20s linear infinite; /* Apply animation */
+}
+
+@keyframes noticeBoardAnimation {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Add CSS for the delete button */
+.delete-btn {
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Position the delete button on the right side of the patient record */
+.patient-record {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px; /* Add margin between patient records */
+}
+
+/* Align the patient name to the left */
+.patient-name {
+    flex: 1; /* Make patient name take remaining space */
+}
+
+#timetable {
+    margin-bottom: 10px; /* Add space below the timetable section */
+    padding: 10px; /* Add padding for space between border and content */
+    border: 02px solid #585757; /* Add border for visual clarity */
+    background-color: #ffffff; /* Set background color */
+    font-family: 'Roboto', sans-serif; /* Set font family */
+    font-size: 14px; /* Set font size */
+    color: #000000; /* Set text color */
+}
+
+#timetable table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse table borders */
+}
+
+#timetable th, #timetable td {
+    border: 1px solid #000000; /* Add border to table cells */
+    padding: 8px; /* Add padding to table cells */
+    text-align: center; /* Center text in table cells */
+}
+
+#timetable th {
+    background-color: #e0e0e0; /* Set background color for table headers */
+}
+
+
+footer {
+    text-align: left; /* Align content to the left */
+    background-color: #0056b3; /* Set background color */
+    color: white; /* Set text color */
+    padding: 1px; /* Add padding for spacing */
+    width: 100%; /* Make the footer span the entire width of the page */
+    position: fixed; /* Fix the footer position at the bottom of the viewport */
+    bottom: 0; /* Align the footer to the bottom */
+}

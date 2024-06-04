@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Corner</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Student Corner</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="doctor-timing.html">Doctor Timing & Day</a></li>
+            <li><a href="billing.html">Billing</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="Student.html">Student Corner</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="timetable">
+            <h2>Timetable</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Subject</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Biology</td>
+                        <td>9:00 AM - 10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Physics</td>
+                        <td>11:00 AM - 12:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Chemistry</td>
+                        <td>9:00 AM - 10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Biology</td>
+                        <td>11:00 AM - 12:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>English</td>
+                        <td>9:00 AM - 10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>Biology</td>
+                        <td>11:00 AM - 12:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>Physics</td>
+                        <td>9:00 AM - 10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>Chemistry</td>
+                        <td>11:00 AM - 12:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>Chemistry</td>
+                        <td>9:00 AM - 10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>Physics</td>
+                        <td>11:00 AM - 12:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>Chemistry</td>
+                        <td>9:00 AM - 10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>Biology</td>
+                        <td>11:00 AM - 12:30 PM</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="student-list">
+            <h2>List of Students</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Admission No.</th>
+                        <th>Student Name</th>
+                        <th>Year of Study</th>
+                    </tr>
+                </thead>
+                <tbody id="student-table-body">
+                    <!-- Student rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+    <script>
+        // Function to generate random student details
+        function generateRandomStudent() {
+            const admissionNo = Math.floor(Math.random() * 9000) + 1000; // Generate a random 4-digit admission number
+            const names = ['Rahul Sharma', 'Deepika Singh', 'Amit Kumar', 'Divya Patel', 'Anita Gupta', 'Suresh Mehta', 'Priya Shah', 'Vivek Singh', 'Neha Kapoor', 'Rajesh Kumar'];
+            const randomName = names[Math.floor(Math.random() * names.length)]; // Select a random name from the array
+            const yearOfStudy = Math.floor(Math.random() * 5) + 1; // Generate a random year of study between 1 and 5
+
+            return { admissionNo, name: randomName, yearOfStudy };
+        }
+
+        // Function to add a new row to the student table
+        function addStudentRow(student) {
+            const tbody = document.getElementById('student-table-body');
+            const newRow = `<tr>
+                                <td>${student.admissionNo}</td>
+                                <td>${student.name}</td>
+                                <td>${student.yearOfStudy}</td>
+                            </tr>`;
+            tbody.innerHTML += newRow;
+        }
+
+        // Add 20 random students to the table
+        for (let i = 0; i < 20; i++) {
+            const newStudent = generateRandomStudent();
+            addStudentRow(newStudent);
+        }
+    </script>
+    
+<br><br><br><br>
+    
+<footer> 
+    <center>
+        <p>2024 Hospital Management System &copy; All rights reserved.</p>
+        <p>Made By Ayushi Sajwan</p>
+    </center>
+</footer>
+</body>
+</html>

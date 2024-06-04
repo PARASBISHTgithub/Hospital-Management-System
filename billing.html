@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="billing.js" defer></script>
+    <style>
+        main {
+            margin-bottom: 50px; /* Add space between main content and footer */
+        }
+        #patient-details {
+            margin-bottom: 50px; /* Add space between patient details section and footer */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Billing</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="doctor-timing.html">Doctor Timing & Day</a></li>
+            <li><a href="billing.html">Billing</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="Student.html">Student Corner</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="billing-section">
+            <h2>Patient Billing</h2>
+            <form id="billing-form" onsubmit="return validateForm()">
+                <label for="patient-name">Patient Name:</label>
+                <input type="text" id="patient-name" name="patient-name" required><br>
+                <label for="treatment-cost">Treatment Cost:</label>
+                <input type="number" id="treatment-cost" name="treatment-cost" min="0" required><br>
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="cash">Cash</option>
+                    <option value="credit">Credit Card</option>
+                    <option value="insurance">Insurance</option>
+                </select><br>
+                <button type="submit">Submit Payment</button>
+            </form>
+        </section>
+
+        <section id="today-total-bill">
+            <h2>Today's Total Bill in INR</h2>
+            <p id="today-total-bill-amount">₹0</p>
+        </section>
+
+        <section id="patient-details">
+            <h2>Patient Details</h2>
+            <ul>
+                <!-- Patient details will be dynamically populated here -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <center>
+            <p>&copy; 2024 Hospital Management System. All rights reserved.</p>
+            <p>&copy;Made By Paras Bisht</p>
+        </center>
+    </footer>
+    <script>
+        function validateForm() {
+            var patientName = document.getElementById("patient-name").value;
+            var treatmentCost = document.getElementById("treatment-cost").value;
+
+            if (patientName.trim() === "") {
+                alert("Please enter the patient's name.");
+                return false;
+            }
+
+            if (isNaN(treatmentCost) || treatmentCost <= 0) {
+                alert("Please enter a valid treatment cost.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
